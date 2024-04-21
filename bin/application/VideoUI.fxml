@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.media.MediaView?>
+
+
+<BorderPane minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="application.VideoController">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" onAction="#processOpenVideo" prefHeight="30.0" prefWidth="80.0" text="Open" />
+        </items>
+      </ToolBar>
+   </top>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
+            <Slider fx:id="seekerSlider" StackPane.alignment="BOTTOM_CENTER">
+               <StackPane.margin>
+                  <Insets bottom="50.0" />
+               </StackPane.margin>
+            </Slider>
+            <HBox alignment="CENTER" maxHeight="60.0" prefWidth="600.0" spacing="5.0" StackPane.alignment="BOTTOM_CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#processPlay" prefHeight="40.0" prefWidth="60.0" text="Play" />
+                  <Button mnemonicParsing="false" onAction="#processPause" prefHeight="40.0" prefWidth="60.0" text="Pause" />
+                  <Button mnemonicParsing="false" onAction="#processStop" prefHeight="40.0" prefWidth="60.0" text="Stop" />
+                  <Button mnemonicParsing="false" onAction="#processPlus5s" prefHeight="40.0" prefWidth="60.0" text="+5s" />
+                  <Button mnemonicParsing="false" onAction="#processMinus5s" prefHeight="40.0" prefWidth="60.0" text="-5s" />
+                  <Button mnemonicParsing="false" onAction="#processSlow" prefHeight="40.0" prefWidth="60.0" text="&lt;&lt;" />
+                  <Button mnemonicParsing="false" onAction="#processFast" prefHeight="40.0" prefWidth="60.0" text="&gt;&gt;" />
+                  <Slider fx:id="volumeSlider" />
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
